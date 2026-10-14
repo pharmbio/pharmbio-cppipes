@@ -8,10 +8,9 @@ These pipelines are adapted from the Broad Institute Imaging Platform's Cell Pai
 
 ## Citation
 
-If you use these pipelines, please cite this repository and the Cell Painting protocol papers:
+If you use these pipelines, please cite this repository (Zenodo DOI to be added):
 
-- Bray M-A, et al. Cell Painting, a high-content image-based assay for morphological profiling using multiplexed fluorescent dyes. *Nature Protocols* 11, 1757–1774 (2016).
-- Cimini BA, et al. Optimizing the Cell Painting assay for image-based profiling. *Nature Protocols* 18, 1981–2013 (2023).
+
 
 ## Authors
 
@@ -20,3 +19,8 @@ Jonne Rietdijk, Polina Georgiev, Anders Larsson, Maris Lapins — Pharmbio, Upps
 ## License
 
 BSD 3-Clause — see [`LICENSE`](LICENSE).
+
+## References
+
+- Bray M-A, et al. Cell Painting, a high-content image-based assay for morphological profiling using multiplexed fluorescent dyes. *Nature Protocols* 11, 1757–1774 (2016).
+- Cimini BA, et al. Optimizing the Cell Painting assay for image-based profiling. *Nature Protocols* 18, 1981–2013 (2023).
