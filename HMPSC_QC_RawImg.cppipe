@@ -1,0 +1,414 @@
+CellProfiler Pipeline: http://www.cellprofiler.org
+Version:5
+DateRevision:421
+GitHash:
+ModuleCount:17
+HasImagePlaneDetails:False
+
+LoadData:[module_num:1|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Input data file location:Default Input Folder sub-folder|sarscov/outputCP407/image_set_lists
+    Name of the file:ImageSetList_Exp2-VERO-L1-20X.csv
+    Load images based on this data?:Yes
+    Base image location:Default Input Folder|
+    Process just a range of rows?:No
+    Rows to process:1,100000
+    Group images by metadata?:No
+    Select metadata tags for grouping:
+    Rescale intensities?:Yes
+
+MeasureImageQuality:[module_num:2|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Calculate metrics for which images?:Select...
+    Image count:1
+    Scale count:2
+    Threshold count:1
+    Select the images to measure:HOECHST
+    Include the image rescaling value?:Yes
+    Calculate blur metrics?:Yes
+    Spatial scale for blur measurements:80
+    Spatial scale for blur measurements:200
+    Calculate saturation metrics?:Yes
+    Calculate intensity metrics?:Yes
+    Calculate thresholds?:Yes
+    Use all thresholding methods?:Yes
+    Select a thresholding method:Otsu
+    Typical fraction of the image covered by objects:0.1
+    Two-class or three-class thresholding?:Two classes
+    Minimize the weighted variance or the entropy?:Weighted variance
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+
+FlagImage:[module_num:3|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['1 = fails; ', '0 = passes;']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Hidden:2
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawHOECHST_Blurry
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PowerLogLogSlope_HOECHST
+    Flag images based on low values?:Yes
+    Minimum value:-2.0
+    Flag images based on high values?:No
+    Maximum value:1.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawHOECHST_Saturated
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PercentMaximal_HOECHST
+    Flag images based on low values?:No
+    Minimum value:0.0
+    Flag images based on high values?:Yes
+    Maximum value:0.25
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Ignore flag skips on last cycle?:No
+
+MeasureImageQuality:[module_num:4|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Calculate metrics for which images?:Select...
+    Image count:1
+    Scale count:2
+    Threshold count:1
+    Select the images to measure:MITO
+    Include the image rescaling value?:Yes
+    Calculate blur metrics?:Yes
+    Spatial scale for blur measurements:5
+    Spatial scale for blur measurements:30
+    Calculate saturation metrics?:Yes
+    Calculate intensity metrics?:Yes
+    Calculate thresholds?:Yes
+    Use all thresholding methods?:Yes
+    Select a thresholding method:Otsu
+    Typical fraction of the image covered by objects:0.1
+    Two-class or three-class thresholding?:Two classes
+    Minimize the weighted variance or the entropy?:Weighted variance
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+
+FlagImage:[module_num:5|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['1 = fails; ', '0 = passes;']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Hidden:2
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawMITO_Blurry
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PowerLogLogSlope_MITO
+    Flag images based on low values?:Yes
+    Minimum value:-2.0
+    Flag images based on high values?:No
+    Maximum value:1.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawMITO_Saturated
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PercentMaximal_MITO
+    Flag images based on low values?:No
+    Minimum value:0.0
+    Flag images based on high values?:Yes
+    Maximum value:0.25
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Ignore flag skips on last cycle?:No
+
+MeasureImageQuality:[module_num:6|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Calculate metrics for which images?:Select...
+    Image count:1
+    Scale count:3
+    Threshold count:1
+    Select the images to measure:PHAandWGA
+    Include the image rescaling value?:Yes
+    Calculate blur metrics?:Yes
+    Spatial scale for blur measurements:20
+    Spatial scale for blur measurements:80
+    Spatial scale for blur measurements:200
+    Calculate saturation metrics?:Yes
+    Calculate intensity metrics?:Yes
+    Calculate thresholds?:Yes
+    Use all thresholding methods?:Yes
+    Select a thresholding method:Otsu
+    Typical fraction of the image covered by objects:0.1
+    Two-class or three-class thresholding?:Two classes
+    Minimize the weighted variance or the entropy?:Weighted variance
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+
+FlagImage:[module_num:7|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['1 = fails; ', '0 = passes;']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Hidden:2
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawPHAandWGA_Blurry
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PowerLogLogSlope_PHAandWGA
+    Flag images based on low values?:Yes
+    Minimum value:-2.0
+    Flag images based on high values?:No
+    Maximum value:1.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawPHAandWGA_Saturated
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PercentMaximal_PHAandWGA
+    Flag images based on low values?:No
+    Minimum value:0.0
+    Flag images based on high values?:Yes
+    Maximum value:0.25
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Ignore flag skips on last cycle?:No
+
+MeasureImageQuality:[module_num:8|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Calculate metrics for which images?:Select...
+    Image count:1
+    Scale count:2
+    Threshold count:1
+    Select the images to measure:SYTO
+    Include the image rescaling value?:Yes
+    Calculate blur metrics?:Yes
+    Spatial scale for blur measurements:5
+    Spatial scale for blur measurements:20
+    Calculate saturation metrics?:Yes
+    Calculate intensity metrics?:Yes
+    Calculate thresholds?:Yes
+    Use all thresholding methods?:Yes
+    Select a thresholding method:Otsu
+    Typical fraction of the image covered by objects:0.1
+    Two-class or three-class thresholding?:Two classes
+    Minimize the weighted variance or the entropy?:Weighted variance
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+
+FlagImage:[module_num:9|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['1 = fails; ', '0 = passes;']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Hidden:2
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawSYTO_Blurred
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PowerLogLogSlope_SYTO
+    Flag images based on low values?:Yes
+    Minimum value:-2.0
+    Flag images based on high values?:No
+    Maximum value:1.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawSYTO_Saturated
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PercentMaximal_SYTO
+    Flag images based on low values?:No
+    Minimum value:0.0
+    Flag images based on high values?:Yes
+    Maximum value:0.25
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Ignore flag skips on last cycle?:No
+
+MeasureImageQuality:[module_num:10|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Calculate metrics for which images?:Select...
+    Image count:1
+    Scale count:2
+    Threshold count:1
+    Select the images to measure:CONC
+    Include the image rescaling value?:Yes
+    Calculate blur metrics?:Yes
+    Spatial scale for blur measurements:10
+    Spatial scale for blur measurements:30
+    Calculate saturation metrics?:Yes
+    Calculate intensity metrics?:Yes
+    Calculate thresholds?:Yes
+    Use all thresholding methods?:Yes
+    Select a thresholding method:Otsu
+    Typical fraction of the image covered by objects:0.1
+    Two-class or three-class thresholding?:Two classes
+    Minimize the weighted variance or the entropy?:Weighted variance
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+
+FlagImage:[module_num:11|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:['1 = fails; ', '0 = passes;']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Hidden:2
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawCONC_Blurred
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PowerLogLogSlope_CONC
+    Flag images based on low values?:Yes
+    Minimum value:-2.0
+    Flag images based on high values?:No
+    Maximum value:1.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Hidden:1
+    Name the flag's category:qc_flag
+    Name the flag:rawCONC_Saturated
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:ImageQuality_PercentMaximal_CONC
+    Flag images based on low values?:No
+    Minimum value:0.0
+    Flag images based on high values?:Yes
+    Maximum value:0.25
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Ignore flag skips on last cycle?:No
+
+IdentifyPrimaryObjects:[module_num:12|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:HOECHST
+    Name the primary objects to be identified:nuclei
+    Typical diameter of objects, in pixel units (Min,Max):20,240
+    Discard objects outside the diameter range?:Yes
+    Discard objects touching the border of the image?:Yes
+    Method to distinguish clumped objects:Shape
+    Method to draw dividing lines between clumped objects:Intensity
+    Size of smoothing filter:10
+    Suppress local maxima that are closer than this minimum allowed distance:7.0
+    Speed up by using lower-resolution image to find local maxima?:Yes
+    Fill holes in identified objects?:After both thresholding and declumping
+    Automatically calculate size of smoothing filter for declumping?:Yes
+    Automatically calculate minimum allowed distance between local maxima?:Yes
+    Handling of objects if excessive number of objects identified:Continue
+    Maximum number of objects:500
+    Use advanced settings?:Yes
+    Threshold setting version:12
+    Threshold strategy:Adaptive
+    Thresholding method:Minimum Cross-Entropy
+    Threshold smoothing scale:1.5
+    Threshold correction factor:1.0
+    Lower and upper bounds on threshold:0.01,1.0
+    Manual threshold:0.0
+    Select the measurement to threshold with:None
+    Two-class or three-class thresholding?:Three classes
+    Log transform before thresholding?:No
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+    Size of adaptive window:50
+    Lower outlier fraction:0.05
+    Upper outlier fraction:0.05
+    Averaging method:Mean
+    Variance method:Standard deviation
+    # of deviations:2.0
+    Thresholding method:Otsu
+
+MeasureImageAreaOccupied:[module_num:13|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Measure the area occupied by:Objects
+    Select binary images to measure:HOECHST
+    Select object sets to measure:nuclei
+
+MeasureObjectSizeShape:[module_num:14|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select object sets to measure:nuclei
+    Calculate the Zernike features?:Yes
+    Calculate the advanced features?:Yes
+
+CalculateMath:[module_num:15|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Name the output measurement:percent_AreaCoveredByNuclei
+    Operation:Divide
+    Select the numerator measurement type:Image
+    Select the numerator objects:None
+    Select the numerator measurement:AreaOccupied_AreaOccupied_nuclei
+    Multiply the above operand by:100.0
+    Raise the power of above operand by:1.0
+    Select the denominator measurement type:Image
+    Select the denominator objects:None
+    Select the denominator measurement:AreaOccupied_TotalArea_nuclei
+    Multiply the above operand by:1.0
+    Raise the power of above operand by:1.0
+    Take log10 of result?:No
+    Multiply the result by:1.0
+    Raise the power of result by:1.0
+    Add to the result:0.0
+    How should the output value be rounded?:Not rounded
+    Enter how many decimal places the value should be rounded to:0
+    Constrain the result to a lower bound?:No
+    Enter the lower bound:0.0
+    Constrain the result to an upper bound?:No
+    Enter the upper bound:1.0
+
+CalculateMath:[module_num:16|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Name the output measurement:count_NucleiPerImg
+    Operation:None
+    Select the numerator measurement type:Image
+    Select the numerator objects:nuclei
+    Select the numerator measurement:Count_nuclei
+    Multiply the above operand by:1.0
+    Raise the power of above operand by:1.0
+    Select the second operand measurement type:Image
+    Select the second operand objects:None
+    Select the second operand measurement:None
+    Multiply the above operand by:1.0
+    Raise the power of above operand by:1.0
+    Take log10 of result?:No
+    Multiply the result by:1.0
+    Raise the power of result by:1.0
+    Add to the result:0.0
+    How should the output value be rounded?:Not rounded
+    Enter how many decimal places the value should be rounded to:0
+    Constrain the result to a lower bound?:No
+    Enter the lower bound:0.0
+    Constrain the result to an upper bound?:No
+    Enter the upper bound:1.0
+
+ExportToSpreadsheet:[module_num:17|svn_version:'Unknown'|variable_revision_number:13|show_window:False|notes:['TEXT']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the column delimiter:Comma (",")
+    Add image metadata columns to your object data file?:Yes
+    Add image file and folder names to your object data file?:Yes
+    Select the measurements to export:No
+    Calculate the per-image mean values for object measurements?:Yes
+    Calculate the per-image median values for object measurements?:Yes
+    Calculate the per-image standard deviation values for object measurements?:Yes
+    Output file location:Default Output Folder|
+    Create a GenePattern GCT file?:No
+    Select source of sample row name:Metadata
+    Select the image to use as the identifier:None
+    Select the metadata to use as the identifier:Count_nuclei
+    Export all measurement types?:No
+    Press button to select measurements:
+    Representation of Nan/Inf:Null
+    Add a prefix to file names?:Yes
+    Filename prefix:qcRAW_
+    Overwrite existing files without warning?:Yes
+    Data to export:Image
+    Combine these object measurements with those of the previous object?:No
+    File name:images_\g<Barcode>.csv
+    Use the object name for the file name?:No
+    Data to export:Experiment
+    Combine these object measurements with those of the previous object?:No
+    File name:experiment_\g<Barcode>.csv
+    Use the object name for the file name?:No
+    Data to export:nuclei
+    Combine these object measurements with those of the previous object?:No
+    File name:nuclei_\g<Barcode>.csv
+    Use the object name for the file name?:No
