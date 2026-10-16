@@ -10,7 +10,7 @@ These pipelines are adapted from the Broad Institute Imaging Platform's Cell Pai
 
 ## Citation
 
-If you use these pipelines, please cite this repository (Zenodo DOI to be added):
+If you use these pipelines, please [cite]( https://doi.org/10.5281/zenodo.23416080) this repository.
 
 
 
