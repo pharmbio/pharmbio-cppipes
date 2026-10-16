@@ -1,4 +1,4 @@
-[![DOI](https://doi.org/10.5281/zenodo.23416080)](https://doi.org/10.5281/zenodo.23416080)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23416080.svg)](https://doi.org/10.5281/zenodo.23416080)
 
 # CellProfiler pipelines for Cell Painting
 
