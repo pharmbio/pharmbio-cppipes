@@ -1,3 +1,5 @@
+[![DOI](https://doi.org/10.5281/zenodo.23416080)](https://doi.org/10.5281/zenodo.23416080)
+
 # CellProfiler pipelines for Cell Painting
 
 Standard CellProfiler pipelines used by [Pharmbio](https://pharmb.io) at Uppsala University for Cell Painting image analysis: illumination correction, quality control, segmentation and feature extraction.
